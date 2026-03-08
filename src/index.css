@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  --color-bg: var(--theme-bg);
+  --color-ink: var(--theme-ink);
+  --color-accent: var(--theme-accent);
+  --color-accent-light: var(--theme-accent-light);
+}
+
+:root {
+  --theme-bg: #FDFBF7;
+  --theme-ink: #1A1A1A;
+  --theme-accent: #7A2E3D;
+  --theme-accent-light: #F0E6E8;
+}
+
+.dark {
+  --theme-bg: #121212;
+  --theme-ink: #FDFBF7;
+  --theme-accent: #C47A8A;
+  --theme-accent-light: #3D171F;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection */
+::selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-ink);
+}
+
+/* Hide scrollbar for clean look but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
